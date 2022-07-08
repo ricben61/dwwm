@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+body{
+    width: 1920px;
+    height: 1080px;
+    background-image: url(/img/contact/photo_fond2.jpeg) ;
+    /* background: no-repeat; */
+    background-repeat: no-repeat;
+    
+}
+.contact{
+
+    /* display: block; */
+    width: 956px;
+    height: 1114px;
+   background: rgba(183, 180, 180, 0.529);
+   border-radius: 50px;
+   margin: 100px 0 0 550px;
+
+
+
+
+
+
+}
+.header{
+
+    /* display: inline; */
+    width: 956px;
+    height: 243px;
+    background-image: url(/img/contact/photo_fond_mini.jpg) ;
+    border-radius: 50px 50px 0 0 ;
+    background-size: 956px 500px;
+    
+   
+}
+
+
+h1{
+    margin: auto;
+    text-align: center;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 64px;
+}
+
+
+
+.logo{
+
+    /* display: inline; */
+    text-align: center;    
+}
+
+.logo:hover{
+
+    cursor: pointer;
+}
+
+
+.formulaire{
+    
+    display: inline;
+    text-align: center;
+    margin: auto;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 119.19%;
+    background: rgba(255, 255, 255, 0);
+    
+
+    
+
+    color: #000000;
+
+}
+
+button{
+        width: 203px;
+        height: 65px;
+        font-size: 32px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        background: rgba(255, 255, 255, 0);
+        color: black;
+        border-radius: 3px;
+        cursor: pointer;
+        margin: 0 0 0 650px;
+        display: block;
+        
+    }
+
+.btn{
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
+   font-size: 100px;
+
+}
+
+.btn:hover{
+    
+    cursor: pointer;
+}
+
+
+.image img{
+
+    width: 1920px;
+    height: 1080px;
+
+
+}
+
+input{
+    background: rgba(255, 255, 255, 0);
+    width: 738px;
+    height: 77px;
+    border: 1px solid #000000;
+    font-size: 32px;
+    
+}
+
+textarea{
+
+    background: rgba(255, 255, 255, 0);
+    width: 738px;
+    height: 206px;
+    border: 1px solid #000000;
+    margin: 0;
+    font-size: 32px;
+
+}
