@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    /* pour supprimé les margin */
+}
+
+.global{
+     /* pour dire que la page prenne tout l'ecran mais je suis pas sur que ca marche */
+    width: 1920px;
+    height: 1080px;
+    
+
+}
+
+.gauche{
+    /* pour bien mettre la div a sa place     */
+    width: 766px;
+    height: 1080px;
+    left: 0px;
+    top: 0px; 
+    display: flex;
+   
+}
+
+.gauche img{
+   /* mettre limage dans la div gauche */
+    width: 100%;
+    height: 100%;
+}
+
+.gaucheHover{
+    /* pour afficher le text sous la photo en opacity 0*/
+    background: rgb(175, 175, 175);
+    /* position: fixed; */
+    width: 766px;
+    height: 1080px;
+    left: 0px;
+    top: 0px;
+    font-size: 60px;
+    color: #FFD600;
+    
+    opacity: 0%;
+   
+    
+} 
+.gaucheHover:hover{
+ /* pour afficher le text sous la photo en opacity 100%*/
+    background: rgb(0, 0, 0,0.5);
+    position: fixed;
+    width: 766px;
+    height: 1080px;
+    left: 0px;
+    top: 0px;
+    font-size: 60px;
+    color: #FFD600;
+    /* text-align: center; */
+    opacity: 100%;
+    cursor: pointer;
+    vertical-align: text-bottom;
+   
+
+   
+  
+} 
+h1{
+   
+    margin: 480px 0 0 60px;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 64px;
+    
+
+}
+h2{
+
+    margin: 480px 0 0 20px;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 64px;
+
+}
+
+.gauche img:hover{
+  /* pour que l'image laisse passé le text quand on passe dessus */
+    background: rgb(175, 175, 175);
+    position: fixed;
+    width: 766px;
+    height: 1080px;
+    left: 0px;
+    top: 0px;
+    font-size: 60px;
+    color: #FFD600;
+    text-align: center;
+    opacity: calc(10%);
+    transition: 0.5 ease;
+    
+}
+
+
+
+.milieu {
+
+    background:  #FFD600;
+    position: absolute;
+    width: 388px;
+    height: 1080px;
+    left: 766px;
+    top: 0px;
+    
+
+}
+.milieu:hover{
+    /* jai mis un pointer mais les liens ne fonctionne pas */
+    background-color: #000000;
+    position: absolute;
+    width: 388px;
+    height: 1080px;
+    left: 766px;
+    top: 0px;
+    cursor: pointer;
+}
+
+.meat:hover{
+    color: #fefefe;
+}
+.fish:hover{
+    color: #fefefe;
+}
+
+.logo{
+text-align: center;
+
+}
+.meat {
+    width: 50px;
+    height: 300px;
+    word-wrap: break-word;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 75px;
+    letter-spacing : 30px;
+    color: #000000;
+    text-align: center;
+    display: inline-block;
+    padding: 140px 60px;
+
+}
+
+.fish {
+    width: 50px;
+    height: 300px;
+    word-wrap: break-word;    
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 75px;
+    letter-spacing : 40px;
+    color: #000000;
+    padding: 20px;
+    display: inline-block;
+    text-align: unset;
+    
+
+}
+.droite {
+    
+    /* ppour placer la div et pourvoir integré l'image */
+    position: absolute;
+    width: 766px;
+    height: 1080px;
+    left: 1154px;
+    top: 0px;
+    display: flex;
+    
+
+}
+.droite img{
+   /* pour placer l'image a sa place  */
+    width: 100%;
+    height: 100%;
+}
+
+.droite img:hover{
+     /* juste pour afficher le text du dessous */
+    opacity: calc(10%);
+}
+
+.droiteHover{
+    /* pour etre present mais invisible */
+    background: #2221214d;
+    position: fixed;
+    width: 766px;
+    height: 1080px;
+    left: 1154px;
+    top: 0px;
+    font-size: 60px;
+    color: #FFD600;
+    text-align: center;
+    opacity: 0%;
+} 
+.droiteHover:hover{
+
+    /* pour que sa s'affiche quand on passe la souris dessus */
+    background: rgb(0, 0, 0,0.5);
+    position: fixed;
+    width: 766px;
+    height: 1080px;
+    left: 1154px;
+    top: 0px;
+    font-size: 60px;
+    color: #FFD600;
+    text-align: center;
+    opacity: 100%;
+    cursor: pointer;
+    transition: all cubic-bezier(0.755, 0.05, 0.855, 0.06);
+} 
