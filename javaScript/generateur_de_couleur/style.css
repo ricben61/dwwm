@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    font-family: "open sans", sans-serif;
+    background: #dddddd;
+    color: #eeeeee;
+    line-height: 1.5;
+    font-size: 1.2rem;
+
+
+}
+
+h2{
+    text-transform: capitalize;
+    margin-bottom: 0.75rem;
+    font-family: "Roboto",sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    
+}
+
+main{
+
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(2,25vh);
+
+}
+
+.container{
+
+    text-align: center;
+}
+
+.color{
+
+    color: rgb(249, 57, 89);
+}
+
+.color:hover{
+    cursor:grab;
+}
+
+
+
+.btn{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: 700;
+    border: 0.15rem solid #000000;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    transition: all 0.3s linear;
+
+}
+.btn:hover{
+
+    color: #ffffff;
+    background: #000000;
+    cursor: pointer;
+
+}
+
+.success{
+    display: none;
+    text-align: center;
+    background: #339335;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    height: 5vh;
+    margin: 10px auto;
+    transition: all 0.3s linear;
+    animation: fadein 1s; /*marche avec la fonction @keyframe*/
+    
+}
+
+/* fonction dans css pour afficher un text  */
+@keyframes fadein {
+
+    0%{
+        opacity:0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+   
+}

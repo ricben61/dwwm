@@ -1,0 +1,91 @@
+/* Impport de de police */
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Italianno&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "lato", sans-serif;
+    background: url("/projet_1/assets/img/projet-1.jpg") no-repeat center /cover ;
+    
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.container{
+
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 45%;
+    
+
+}
+.header{
+
+    font-size: 1.3rem;
+    border: 2px solid #fff;
+    background-color: rgba(42, 37, 91, 0.74);
+    color: #fff;
+    padding: 5px;
+    width: 80%;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.content{
+
+   
+   background-position: 0rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.505);
+    border-radius: 15px;
+    box-shadow: 0 0 10px ;
+
+}
+
+.text-area{
+    font-size: 2.3rem;
+    line-height: 1.9rem;
+    font-family: "parisienne","italianno", cursive;
+    text-shadow: 0 10px 10px rgb(51, 12, 167);
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    color: rgb(72, 34, 186);
+    
+
+}
+.auteur{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding-top: 20px;
+    color: rgb(116, 49, 49);
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+button{
+
+    background-color: rgb(144, 143, 251);
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+button:active{
+    background-color: rgb(103, 232, 83);
+    color: #000;
+    cursor: pointer;
+
+}

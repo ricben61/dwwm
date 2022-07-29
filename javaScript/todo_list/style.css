@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 100vh;
+    /* width: 100%; */
+    /* background: #eeeeee; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(/projet_4/img/621e3d842f5305af9170e4eb_619cef5c40cb8963c133f5fc_6076f40a7bc433d96f4663f4_template-vignette-TO-DO-LIST-1200x900.png) no-repeat  ;
+    background-size: 1200px;
+    background-position: center;
+    background-position-y: -240px;
+}
+
+#add-task-container{
+
+    width: 60vh;
+    padding: 20px 10px;
+    background: #ffffff8f;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.2rem;
+    margin-bottom: 5rem;
+    display: flex;
+
+
+
+}
+
+input{
+
+    width: 80%;
+    flex: 5;
+    transition: all 0.3s linear;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 0.5rem;
+}
+
+#add-task{
+
+    flex: 1;
+    transition: .3s;
+    margin: 2px;
+    font-size: 1.2rem;
+    padding: 5px;
+    background: #ffffff;
+    border: 2px solid green;
+    border-radius: 0.5rem;
+
+
+}
+
+#add-task:hover{
+
+    background: green;
+    color: #ffffff;
+
+}
+
+/*Ci dessous les taches ajoutés à la Todo list*/
+
+.task{
+    width: 60vh;
+    background: #ffffff7a;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem;
+    padding: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task li {
+
+    list-style-type: none;
+    flex: 4;
+    padding: 5px;
+    font-size: 1.3rem;
+    margin: 10px;
+
+}
+.task button{
+    flex: 1;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    cursor: pointer;
+
+}
+.check-task:hover{
+    background: orange;
+    color: #ffffff;
+}
+
+.check-task{
+
+    color: orange;
+    margin-right: 5px;
+    border: 2px solid orange;
+    font-size: 1.5rem;
+}
+
+.delete-task{
+    color: red;
+    border: 2px solid red;
+    /* color: #ffffff; */
+    font-size: 1.3rem;
+}
+
+.delete-task:hover{
+    background-color: red;
+    color: #ffffff;
+}
+
+.toggle-task{
+
+    text-decoration: line-through;
+}
+
