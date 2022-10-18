@@ -1,0 +1,78 @@
+
+
+
+
+<section  class="bg-info text-white p-5 rounded  ">
+
+
+
+    <div>
+    <tabset *ngIf="communesIsloading" >
+        <tab heading="départements" id="tab1"  >
+            <app-departement-table class="de"
+            [departements]="departements"
+            [departementsIsloading]="departementsIsloading"
+            [departementsIsloaded]="departementsIsloaded"
+            (loadDepartements)="loadDepartements()"
+            (loadCommunes)="loadCommunes($event)">
+            </app-departement-table>
+        </tab>
+       
+
+        <tab heading="Communes"  >
+            <app-commune-table
+            [communes]="communes"
+            [communesIsloading]="communesIsloading"
+            [communesIsloaded]="communesIsloaded">
+            </app-commune-table>
+        </tab>
+
+
+        <tab heading="Graphique" >
+            <app-commune-graph
+            [communesForGraph]="communesForGraph"
+            [communesIsloading]="communesIsloading"
+            [communesIsloaded]="communesIsloaded">
+            </app-commune-graph>
+        </tab>
+
+
+    </tabset>
+ 
+ </div>
+
+ <div>
+    <tabset *ngIf="!communesIsloading" >
+       
+       
+
+        <tab heading="Communes"  >
+            <app-commune-table
+            [communes]="communes"
+            [communesIsloading]="communesIsloading"
+            [communesIsloaded]="communesIsloaded">
+            </app-commune-table>
+        </tab>
+
+
+        <tab heading="Graphique" >
+            <app-commune-graph
+            [communesForGraph]="communesForGraph"
+            [communesIsloading]="communesIsloading"
+            [communesIsloaded]="communesIsloaded">
+            </app-commune-graph>
+        </tab>
+
+        <tab heading="départements"   >
+                    <app-departement-table class="de"
+                    [departements]="departements"
+                    [departementsIsloading]="departementsIsloading"
+                    [departementsIsloaded]="departementsIsloaded"
+                    (loadDepartements)="loadDepartements()"
+                    (loadCommunes)="loadCommunes($event)">
+                    </app-departement-table>
+                </tab>
+
+    </tabset>
+ 
+ </div>

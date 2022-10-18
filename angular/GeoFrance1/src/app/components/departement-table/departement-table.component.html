@@ -1,0 +1,48 @@
+
+
+<!-- on met une condition ngIf pour afficher le bouton de chargement des departement -->
+<button *ngIf="!departementsIsloaded" type="action" class="btn btn-primary" (click)="loadDepartements.emit()"  >
+Charger les departements
+</button>
+
+<h1 *ngIf ="!departementsIsloaded"class="c2">
+    <span class="word">😀 Maintenant 😀 </span><br>
+    <span class="word"> Cliquer sur </span><br>
+    <span class="word"> Charger les departements</span>
+    <span class="word">en haut à gauche </span><br>
+  </h1>
+
+<!-- ngIf sert a ne pas afficher le tableau. ng-container permet d'attendre asynchrone le chargement des donnees -->
+<ng-container *ngIf="departementsIsloaded"> 
+    
+    <div>
+        <label for="search" class="form-label">Rechercher un département</label>
+        <input type="text" class="form-control" name="search" placeholder="Ex:Orne"[(ngModel)]="search" autocomplete="off">
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr class="text-center" >
+                <th scope="col">Nom</th>
+                <th scope="col">Code</th>
+                <th scope="col">Code région</th>
+                <th scope="col">Plus d'information</th>              
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" *ngFor="let departement of getDepartements()">
+                <td>{{departement.nom}}</td>
+                <td>{{departement.code}}</td>
+                <td>{{departement.codeRegion}}</td>
+                <td class="loupe" (click)="loadCommunes.emit(departement.code)"><fa-icon [icon] = "faMagnifyingGlass"></fa-icon></td>
+
+            </tr>
+
+        </tbody>
+
+
+    </table>
+    <pagination [totalItems]="getLenth()" [(ngModel)]="currentPage"  [maxSize]="10" [boundaryLinks]="true" firstText="<<" lastText=">>" previousText="Précédent" nextText="Suivant" ></pagination>
+
+</ng-container>
+
