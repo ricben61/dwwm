@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
+
+
+
+table{
+    height:460px;
+    background-color: rgb(113, 165, 243);
+    font-family:"Crete Round" ;
+    font-weight: 700;
+
+    
+}
+
+.loupe{
+
+    cursor: pointer;
+}
+
+.c2 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 8em;
+    font-family:"Crete Round" ;
+    letter-spacing: 0.1em;
+    color: rgb(9, 86, 231);
+
+  }
+  
+  .c2 .word {
+    display: inline-block;
+    line-height: 1.3em;
+  }
+

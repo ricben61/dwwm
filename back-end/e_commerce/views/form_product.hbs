@@ -1,0 +1,105 @@
+<div class="alert alert-success text-center success-message" role="alert">
+    A simple success alert—check it out!
+</div>
+
+{{#if dataProducts}}
+<h2 style="text-align: center">Modifier un article</h2>
+{{else}}
+<h2 style="text-align: center">Ajouter un article</h2>
+{{/if}}
+
+
+<section style="width: 50vw; margin: 0 auto;">
+
+    {{#if dataProducts}}
+    <form class="mb-5" action="/updateProducts/{{dataProducts.id}}/?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded"
+        style="display: grid; gap: 5%">
+        {{else}}
+        <form class="mb-5" action="/form-products" method="POST" enctype="application/x-www-form-urlencoded"
+            style="display: grid; gap: 5%">
+            {{/if}}
+
+            <div class="form-group ">
+                <div class="mb-3">
+                    {{#if dataProducts}}
+                    <label for="formFile" class="form-label">Choisissez une nouvelle image</label>
+                    {{else}}
+                    <label for="formFile" class="form-label">Choisissez une image</label>
+                    {{/if}}
+
+                    <input name="imageUrl" class="form-control" type="file" id="formFile">
+                </div>
+
+                <label for="inputTitle">Titre</label>
+                <input name="name" type="text" class="form-control" id="inputTitle" placeholder="Nom de votre produit"
+                    {{#if dataProducts}} value="{{dataProducts.name}}" {{/if}}  required>
+            </div>
+
+            <div class="form-group">
+                <label for="inputDescription">Description</label>
+                <input name="description" type="text" class="form-control" placeholder="Décrivez votre produit" {{#if dataProducts}} value="{{dataProducts.description}}" {{/if}}  required>
+            </div>
+
+            <div class="form-group">
+                <label for="inputDescription">Prix</label>
+                <input name="price" type="number" step="0.01" class="form-control" placeholder="€" {{#if dataProducts}}
+                    value="{{dataProducts.price}}" {{/if}}  required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="exampleFormControlSelect1" class="mb-1"> Top produit</label>
+                <select name="isBest" class="form-control">
+                    <option>true</option>
+                    <option>false</option>
+                </select>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label for="exampleFormControlSelect1" class="mb-1">Categorie</label>
+                <select name="categoriyId" class="form-control">
+                    {{#each categories}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="inputDescription">Quantité</label>
+                <input name="quantity" type="number" class="form-control" placeholder="quantité" {{#if dataProducts}}
+                    value="{{dataProducts.price}}" {{/if}}required>
+            </div>
+
+            <div class="form-group">
+                <label for="inputDescription">Poids</label>
+                <input name="weight" type="number" class="form-control" placeholder="poids" {{#if dataProducts}}
+                    value="{{dataProducts.price}}" {{/if}} required>
+            </div>
+
+
+            <div class="form-group ">
+                {{!-- Affiche les messages d'erreur --}}
+                {{#if errors}}
+                <div class="row justify-content-center">
+                    <div>
+                        <ul class="list-group">
+                            {{#each errors}}
+                            <li class="list-group-item list-group-item-danger">{{this.msg}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                {{/if}}
+
+                {{#if dataProducts}}
+
+                <button type="submit" class="btn btn-primary mb-5 ">Modifier</button>
+
+                {{else}}
+
+                <button type="submit" class="btn btn-primary mb-5 ">Ajouter</button>
+
+                {{/if}}
+            </div>
+        </form>
+    </form>
+</section>

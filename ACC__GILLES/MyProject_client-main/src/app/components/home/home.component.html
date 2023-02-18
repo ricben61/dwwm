@@ -1,0 +1,10 @@
+<div class="d-flex flex-wrap m-3">
+  <div *ngFor="let post of posts" class="card col-3 p-1">
+    <img src="https://picsum.photos/400" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.content | slice:0:50}}...</p>
+      <a routerLink="../post/{{post._id}}" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>

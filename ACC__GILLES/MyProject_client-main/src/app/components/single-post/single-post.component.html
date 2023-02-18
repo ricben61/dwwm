@@ -1,0 +1,12 @@
+<div class="card m-5">
+    <img src="https://picsum.photos/800" class="card-img-top" alt="..." style="width: 400px">
+    <div class="card-body">
+        <p class="card-text" *ngIf="post"><i *ngFor="let category of categories; let index=index">{{category.title | uppercase}}<i *ngIf="index+1 !== categories?.length"> - </i> </i></p>
+        <h5 class="card-title col-6" *ngIf="post">{{post.title}}</h5>
+        <p class="card-text" *ngIf="post">{{post.content}}</p>
+        <p class="card-text" *ngIf="author">By {{author.login}}</p>
+        <p class="card-text" *ngIf="post">Publication date : {{post.createdAt | date: 'd/M/Y'}}</p>
+        <a routerLink="../../edit/{{post._id}}" *ngIf="post && user && user.userId === post.author" class="btn btn-primary">Edit</a>
+        <a routerLink="" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+</div>

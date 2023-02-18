@@ -1,0 +1,34 @@
+
+    
+
+<h2  class="  text-decoration-underline m row justify-content-center" >{{viewTitle}}</h2>
+
+   <section class="container   ">
+    {{#each data }}
+    
+        <div class="card ">
+            <img class="card-img-top" src="/public/images/{{img}}" alt="image de la recette ">
+            <div class="card-body">
+                <h5 class="card-title">{{titre}}</h5>
+                <textarea class="form-control w-100" readonly="readonly" rows="5"
+                    style="resize:none;">{{description}}</textarea>
+                <a class="btn btn-warning " href="/description/{{_id}}">Recette</a> 
+                  <div class="card-footer p-0">
+                <a class="btn btn-primary " href="/updateRecettes/{{_id}}">Modifier</a>
+                 
+                <form method="POST" enctype="application/x-www-form-urlencoded"
+                    action="/delete/{{_id}}/?_method=delete">
+                    <button onclick='return confirm("Êtes-vous sûr de vouloir supprimer?")' type="submit" class="btn btn-danger ">Supprimé</button>
+                </form>
+                </div> 
+                
+            </div>
+        </div>
+   
+
+    {{/each}}
+
+</section>
+       
+
+    </section> 

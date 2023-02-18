@@ -1,0 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+
+
+
+table{
+    height:460px;
+    background-color: rgb(241, 127, 135);
+    font-family: "Sofia" , sans-serif;
+    font-weight: 600;
+}
+
+a:hover{
+    cursor: pointer;
+}

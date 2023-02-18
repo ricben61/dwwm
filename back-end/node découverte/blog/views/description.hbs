@@ -1,0 +1,129 @@
+<h1 class="card-title">{{recette.titre}}</h1>
+
+
+<div class="description">
+  <img src="/public/images/{{recette.img}}" id="imgRecette" class="card-img-top" alt="image recette">
+  <div class="card-body">
+
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+            aria-controls="panelsStayOpen-collapseOne">
+            ingredients
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+          aria-labelledby="panelsStayOpen-headingOne">
+          <div class="accordion-body">
+            <ol>
+              <li>tomate</li>
+              <li>courgette</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseTwo">
+            etape de la recette
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+          aria-labelledby="panelsStayOpen-headingTwo">
+          <div class="accordion-body">
+            {{recette.description}}
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseThree">
+            cuisson
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+          aria-labelledby="panelsStayOpen-headingThree">
+          <div class="accordion-body">
+            <ul>
+              <li><strong>four a 180 °</strong></li>
+              <li>cuire 45 min</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{{#if UsAdMod }}
+<div class="text-center  bg-light " style="width:70% ; margin-left:250px; border-radius:25px">
+  <form method="POST" enctype="application/x-www-form-urlencoded" action="/description/{{recette._id}}">
+    <textarea name="description" id="" cols="95" rows="5" placeholder="écrivez votre commentaire"></textarea>
+    <button type="submit" class="btn btn-danger ">Ajouté un commentaire</button>
+  </form>
+</div>
+
+{{/if}}
+{{#if AdMod }}
+{{#each comment}}
+<form method="POST" enctype="application/x-www-form-urlencoded" action="/updateComment/{{_id}}/?_method=put">
+  <div class="text-center  bg-light " style="width:70% ; margin-left:250px; border-radius:25px">
+    <h5>{{userName}}</h5>
+    <textarea name="description" cols="95" rows="5">{{description}}</textarea>
+    <p>Crée le {{moment createdAt format= "DD/MM/YYYY"}} à {{moment createdAt format="HH:mm"}}</p>
+    <p>Modifié le {{moment updatedAt format="DD/MM/YYYY"}} à {{moment updatedAt format="HH:mm"}}</p>
+    <button type="submit" class="btn btn-warning ">Modifier le commentaire</button>
+
+</form>
+<form method="POST" enctype="application/x-www-form-urlencoded" action="/deleteComment/{{_id}}/?_method=delete">
+  <button onclick='return confirm("Êtes-vous sûr de vouloir supprimer?")' type="submit"
+    class="btn btn-danger ">Supprimer le commentaire</button>
+</form>
+
+</div>
+
+{{/each}}
+{{else}}
+{{#each comment}}
+
+<div>
+  <form class="formulaireCommentaire" method="POST" enctype="application/x-www-form-urlencoded"
+    action="/updateComment/{{_id}}/?_method=put">
+    <div class="text-center  bg-light " style="width:70% ; margin-left:250px; border-radius:25px">
+      <h5>{{userName}}</h5>
+
+      {{#ifCond ../userId userId }}
+      <textarea name="description" cols="95" rows="5">{{description}}</textarea>
+      {{else}}
+      <textarea name="description" cols="95" rows="5" readonly="true">{{description}}</textarea>
+      {{/ifCond}}
+      <p>Crée le {{moment createdAt format= "DD/MM/YYYY"}} à {{moment createdAt format="HH:mm"}}</p>
+      <p>Modifié le {{moment updatedAt format="DD/MM/YYYY"}} à {{moment updatedAt format="HH:mm"}}</p>
+      {{#ifCond ../userId userId }}
+
+      <button onclick='return confirm("Êtes-vous sûr de vouloir supprimer?")' type="submit"
+        class="btn btn-warning ">Modifier le commentaire</button>
+      {{/ifCond}}
+  </form>
+
+
+
+  {{#ifCond ../userId userId }}
+
+  <form method="POST" enctype="application/x-www-form-urlencoded" action="/deleteComment/{{_id}}/?_method=delete">
+    <button onclick='return confirm("Êtes-vous sûr de vouloir supprimer?")' type="submit"
+      class="btn btn-danger ">Supprimer le commentaire</button>
+  </form>
+  {{/ifCond}}
+</div>
+
+
+{{/each}}
+{{/if}}

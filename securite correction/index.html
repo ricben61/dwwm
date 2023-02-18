@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Formulaire</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="main.js" defer></script>
+    <style class="cp-pen-styles">
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>TP Formulaire </h1>
+    <form id="login-form" class="login-form" name="form1">
+        <!-- <input type="hidden" name="is_login" value="1"> -->
+        <input id="name" name="name" class="required" type="text" placeholder="name">
+        <input id="password" name="password"  type="text" placeholder="Mot de passe" minlength="8" maxlength="32" >
+        <input id="confirmPassword" name="confirmPassword" type="text" placeholder="Confirmez votre mdp">
+
+        <div class="row"><button type="submit" id="login-button">Se connecter</button></div>
+        
+    </form>
+    <article>
+        <ul class="verif">
+            <li class="name-info"></li>
+            <li class="pwd-info"></li>
+            <li class="confirmPwd-info"></li>
+        </ul>
+    </article>
+</div>
+    </div>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

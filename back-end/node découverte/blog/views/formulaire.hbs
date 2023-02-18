@@ -1,0 +1,97 @@
+
+{{#if updateRecettes}}
+    
+    <section class="m-auto" style="width: 30rem;">
+        <h1 class="m-4 text-center text-decoration-underline">Modification d'articles</h1>
+
+        <form method="POST" enctype="multipart/form-data" action="/updateRecettes/{{recette._id}}/?_method=put" class="border border-1 border-dark p-3 rounded-5">
+            <div class="form-group mb-3">
+                <label for="exampleFormControlSelect1" class="mb-1">Choix de la catégorie:</label>
+                <select name="categorie" class="form-control" id="exampleFormControlSelect1">
+                    <option>{{recette.categorie}}</option>
+                    <option>Entrée</option>
+                    <option>Plat</option>
+                    <option>Dessert</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-3">
+                <label  for="exampleFormControlTextarea1">Titre de la recette:</label>
+                <input name="titre" class="form-control" type="text" value="{{recette.titre}}">
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="exampleFormControlTextarea1">Recette:</label>
+                <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" style="resize: none;">{{recette.description}}</textarea>
+            </div>
+
+            <div class="form-group mb-3">
+                <label  for="exampleFormControlFile1">Image recette:</label>
+                <input name="img" value="{{recette.img}}"  type="file"  class="form-control-file" id="exampleFormControlFile1">
+                <img class="img-thumbnail" src="/public/images/{{recette.img}}" alt="image" style="width:20%">
+            </div>
+            {{#if errors}}
+    <div class="row justify-content-center">
+        <div >
+            <ul class="list-group">
+                {{#each errors}}
+                <li class="list-group-item list-group-item-danger">{{this.msg}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    {{/if}}
+
+            <button type="submit" class="btn btn-primary">Modifié</button>
+            
+
+        </form>
+    </section>
+
+
+{{else}}
+    <section class="m-auto" style="width: 30rem;">
+
+        <h1 class="m-4 text-center text-decoration-underline">Création d'articles</h1>
+
+        <form method="POST" enctype="multipart/form-data" action="/formulaire" class="border border-1 border-dark p-3 rounded-5">
+            <div class="form-group mb-3">
+                <label for="exampleFormControlSelect1" class="mb-1">Choix de la catégorie:</label>
+                <select name="categorie" class="form-control" id="exampleFormControlSelect1">
+                    <option>Entrée</option>
+                    <option>Plat</option>
+                    <option>Dessert</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-3">
+                <label  for="exampleFormControlTextarea1">Titre de la recette:</label>
+                <input name="titre" class="form-control" type="text" placeholder="Ecrivez votre titre" value="{{get.titre}}">
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="exampleFormControlTextarea1">Recette:</label>
+                <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" style="resize: none;">{{get.description}}</textarea>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="exampleFormControlFile1">Image recette:</label>
+                <input name="img" type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            {{#if errors}}
+    <div class="row justify-content-center">
+        <div >
+            <ul class="list-group">
+                {{#each errors}}
+                <li class="list-group-item list-group-item-danger">{{this.msg}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    {{/if}}
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          
+        </form>
+    </section>
+{{/if}}
+

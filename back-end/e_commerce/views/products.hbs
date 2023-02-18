@@ -1,0 +1,51 @@
+<div class="container my-3">
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <!--<th scope="col">#</th>-->
+                        <th scope="col">Nom</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col">Produit favoris</th>
+                        <th scope="col">Poids</th>
+                        <th scope="col">Categorie</th>
+                        <th scope="col">Créé le</th>
+                        <th scope="col">Modifié le</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each dataProducts }}
+                    <tr>
+                        <!--<td>{{@index}}</td>-->
+                        <td>{{name}}</td>
+                        <td>{{description}}</td>
+                        <td>{{price}}</td>
+                        <td>{{quantity}}</td>
+                        <td>{{isBest}}</td>
+                        <td>{{weight}}</td>
+                        <td>{{category.name}}</td>
+                        <td>{{moment createdAt format="DD/MM/YYYY HH : mm"}}</td>
+                        <td>{{moment updatedAt format="DD/MM/YYYY HH : mm"}}</td>
+                        <td>
+                            <a href="/updateProducts/{{id}}"><button type="button"
+                                    class="btn btn-outline-primary btn-sm mx-2">Modifier</button></a>
+                        </td>
+                        <td>
+                            <form method="POST" action="/deleteProducts/{{id}}/?_method=DELETE">
+                                <button onclick="return confirm('Confirmer la suppression ?')" type="submit"
+                                    class="btn btn-outline-danger btn-sm mx-2">Supprimer
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

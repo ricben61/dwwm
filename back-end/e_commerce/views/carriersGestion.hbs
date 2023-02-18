@@ -1,0 +1,44 @@
+<section class="container-lg mt-5 mb-4">
+
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8 mb-4">
+                    <h2>Liste des livraisons</h2>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered border-dark">
+            <thead>
+                <tr class="text-center">
+                    <th>Nom <i class="fa-solid fa-arrow-right-arrow-left fa-rotate-90"></i></th>
+                    <th>Prix <i class="fa-solid fa-arrow-right-arrow-left fa-rotate-90"></i></th>
+                    <th>Poids mini: <i class="fa-solid fa-arrow-right-arrow-left fa-rotate-90"></i></th>
+                    <th>Poids maxi:</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each carriers}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{price}}</td>
+                    <td>{{minWeight}}</td>
+                    <td>{{maxWeight}}</td>
+                    <td class="d-flex justify-content-around">
+                    <a href="/carriers/{{id}}" class="material-icons btn btn-primary">edit</a>
+                    <form method="POST" enctype="application/x-www-form-urlencoded"
+                        action="/carriersDelete/{{id}}/?_method=delete">
+                        <button class="btn btn-danger material-icons"
+                            onclick='return confirm("Êtes-vous sûr de vouloir supprimer?")'>delete</button>
+                    </form>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</section>

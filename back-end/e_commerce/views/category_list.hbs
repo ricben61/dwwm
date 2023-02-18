@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Modifier</th>
+      <th scope="col">Suprimmer</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each categories }}
+       <tr>
+      <th scope="row">{{id}}</th>
+      <td>{{name}}</td>
+      <td>
+        <form action="/categorie/{{id}}/?_method=PUT" method="post">
+        <button type="submit" class="btn btn-secondary">Modifier</button>
+        </form>
+      </td>
+      <td>
+        <form action="/categorie/{{id}}/?_method=DELETE" method="post">
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
+      </td>
+    </tr> 
+    {{/each}}
+    
+    
+  </tbody>
+</table>
+    </div>
+</div>
